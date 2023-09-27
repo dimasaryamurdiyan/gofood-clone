@@ -16,8 +16,8 @@ object HttpFactory {
 
     fun createRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://foodmarket-api.aryaaditiya.com/")
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .baseUrl("http://foodmarket-api.aryaaditiya.com/api/")
+            .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
             .client(okHttpClient)
             .build()
     }
@@ -25,9 +25,9 @@ object HttpFactory {
     fun createOkhttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
             .build()
     }
 
