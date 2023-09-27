@@ -7,36 +7,35 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.singaludra.gofood.feature.register.presentation.LoginViewModel
-import com.singaludra.gofood.feature.register.ui.LoginScreen
+import com.singaludra.gofood.feature.login.presentation.LoginViewModel
+import com.singaludra.gofood.feature.login.ui.LoginScreen
+import com.singaludra.gofood.feature.login.ui.navigation.REGISTER
+import com.singaludra.gofood.feature.login.ui.navigation.REGISTER_ADDRESS
+import com.singaludra.gofood.feature.login.ui.navigation.REGISTER_GRAPH_ROUTE
+import com.singaludra.gofood.feature.register.ui.AddressScreen
+import com.singaludra.gofood.feature.register.ui.RegisterScreen
 
-const val LOGIN_GRAPH_ROUTE = "login-graph"
-const val LOGIN = "login"
 
-fun NavGraphBuilder.loginGraph(
-    onBtnRegisterClick: () -> Unit,
+fun NavGraphBuilder.registerGraph(
+    onArrowClick: () -> Unit,
+    onButtonClick: (String) -> Unit,
 ) {
     navigation(
-        route = LOGIN_GRAPH_ROUTE,
-        startDestination = LOGIN,
+        route = REGISTER_GRAPH_ROUTE,
+        startDestination = REGISTER,
     ) {
-        composable(LOGIN) {
-            LoginUserRoute(viewModel = viewModel(factory = LoginViewModel.FACTORY), onBtnRegisterClick = onBtnRegisterClick)
+        composable(REGISTER) {
+            RegisterScreen(
+                onArrowClick = onArrowClick,
+                onButtonClick = { onButtonClick(REGISTER_ADDRESS) }
+            )
         }
-    }
-}
 
-@Composable
-fun LoginUserRoute (
-    viewModel: LoginViewModel,
-    onBtnRegisterClick: () -> Unit,
-) {
-    val loginUIState by viewModel.loginUIState.collectAsStateWithLifecycle()
-
-    LoginScreen(
-        loginUIState = loginUIState,
-        onBtnRegisterClick = onBtnRegisterClick
-    ) { email, password ->
-        viewModel.login(email, password)
+        composable(REGISTER_ADDRESS) {
+            AddressScreen(
+                onArrowClick = onArrowClick,
+                dropDownList = listOf(),
+            )
+        }
     }
 }
