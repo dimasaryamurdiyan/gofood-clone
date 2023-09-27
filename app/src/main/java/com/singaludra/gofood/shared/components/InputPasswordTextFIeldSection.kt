@@ -52,7 +52,10 @@ fun InputPasswordTextFieldSection(
             modifier = modifier
                 .fillMaxWidth(),
             value = textValue.value,
-            onValueChange = onValueChange,
+            onValueChange = {
+                onValueChange.invoke(it)
+                textValue.value = it
+            },
             textStyle = TextStyle(
                 color = Color.Black,
                 fontSize = 16.sp,
