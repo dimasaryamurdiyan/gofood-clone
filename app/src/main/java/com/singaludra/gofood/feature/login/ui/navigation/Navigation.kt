@@ -1,35 +1,48 @@
 package com.singaludra.gofood.feature.login.ui.navigation
 
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.singaludra.gofood.feature.login.ui.AddressScreen
-import com.singaludra.gofood.feature.login.ui.RegisterScreen
+import com.singaludra.gofood.feature.login.presentation.LoginViewModel
+import com.singaludra.gofood.feature.login.ui.LoginScreen
+import com.singaludra.gofood.feature.register.ui.AddressScreen
+import com.singaludra.gofood.feature.register.ui.RegisterScreen
 
 const val REGISTER_GRAPH_ROUTE = "register-graph"
 const val REGISTER = "register"
 const val REGISTER_ADDRESS = "register/address"
 
-fun NavGraphBuilder.registerGraph(
-    onArrowClick: () -> Unit,
-    onButtonClick: (String) -> Unit,
+const val LOGIN_GRAPH_ROUTE = "login-graph"
+const val LOGIN = "login"
+
+fun NavGraphBuilder.loginGraph(
+    onBtnRegisterClick: () -> Unit,
 ) {
     navigation(
-        route = REGISTER_GRAPH_ROUTE,
-        startDestination = REGISTER,
+        route = LOGIN_GRAPH_ROUTE,
+        startDestination = LOGIN,
     ) {
-        composable(REGISTER) {
-            RegisterScreen(
-                onArrowClick = onArrowClick,
-                onButtonClick = { onButtonClick(REGISTER_ADDRESS) }
-            )
+        composable(LOGIN) {
+            LoginUserRoute(viewModel = viewModel(factory = LoginViewModel.FACTORY), onBtnRegisterClick = onBtnRegisterClick)
         }
+    }
+}
 
-        composable(REGISTER_ADDRESS) {
-            AddressScreen(
-                onArrowClick = onArrowClick,
-                dropDownList = listOf(),
-            )
-        }
+@Composable
+fun LoginUserRoute (
+    viewModel: LoginViewModel,
+    onBtnRegisterClick: () -> Unit,
+) {
+    val loginUIState by viewModel.loginUIState.collectAsStateWithLifecycle()
+
+    LoginScreen(
+        loginUIState = loginUIState,
+        onBtnRegisterClick = onBtnRegisterClick
+    ) { email, password ->
+        viewModel.login(email, password)
     }
 }

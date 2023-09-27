@@ -1,11 +1,10 @@
-package com.singaludra.gofood.feature.login.presentation
+package com.singaludra.gofood.feature.register.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.singaludra.gofood.feature.register.domain.RegisterUser
-import com.singaludra.gofood.feature.register.presentation.LoginUIState
 import com.singaludra.gofood.main.factories.register.RemoteRegisterUserFactory
 
 sealed interface RegisterUIState{

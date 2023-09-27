@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.register.presentation
+package com.singaludra.gofood.feature.login.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -10,7 +10,6 @@ import com.singaludra.gofood.feature.login.domain.LoginUser
 import com.singaludra.gofood.feature.login.domain.LoginUserResult
 import com.singaludra.gofood.feature.register.http.usecases.Connectivity
 import com.singaludra.gofood.feature.register.http.usecases.InvalidData
-import com.singaludra.gofood.main.factories.login.LoginUserHttpClientFactory
 import com.singaludra.gofood.main.factories.login.RemoteLoginUserFactory
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
