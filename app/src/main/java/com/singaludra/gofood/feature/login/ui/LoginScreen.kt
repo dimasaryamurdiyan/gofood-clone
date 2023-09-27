@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -53,6 +54,7 @@ fun LoginScreen(
 
     Scaffold (
         modifier = modifier,
+        snackbarHost = { SnackbarHost (hostState = snackbarHostState)},
         topBar = {
             TopBarSection(
                 title = "Login",
@@ -63,7 +65,7 @@ fun LoginScreen(
         Column (
             modifier = Modifier.padding(it)
         ) {
-            Spacer(modifier.weight(0.4f))
+            Spacer(Modifier.padding(top = 100.dp))
 
             Column(
                 modifier = Modifier.padding(horizontal = 16.dp)
@@ -85,9 +87,11 @@ fun LoginScreen(
                         keyboardType = KeyboardType.Password,
                         imeAction = ImeAction.Done
                     ),
-                    onValueChange ={passwordValueState.value}
+                    onValueChange ={ value -> passwordValueState.value = value}
                 )
-                Spacer(modifier = Modifier.weight(0.8f))
+
+                Spacer(modifier = Modifier.weight(1f))
+
                 Column(
                     modifier = Modifier.padding(16.dp)
                 ) {
