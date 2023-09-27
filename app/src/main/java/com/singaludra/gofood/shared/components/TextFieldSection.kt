@@ -43,7 +43,10 @@ fun TextFieldSection(
             modifier = modifier
                 .fillMaxWidth(),
             value = textValue.value,
-            onValueChange = onValueChange,
+            onValueChange = {
+                textValue.value = it
+                onValueChange.invoke(it)
+            },
             textStyle = TextStyle(
                 color = Color.Black,
                 fontSize = 14.sp
