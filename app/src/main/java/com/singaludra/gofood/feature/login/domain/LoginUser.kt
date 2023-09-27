@@ -8,5 +8,5 @@ sealed class LoginUserResult {
     data class Failure(val throwable: Throwable) : LoginUserResult()
 }
 interface LoginUser {
-    fun login(user: LoginData): Flow<LoginUserResult>
+    fun login(email: String, password: String): Flow<LoginUserResult>
 }

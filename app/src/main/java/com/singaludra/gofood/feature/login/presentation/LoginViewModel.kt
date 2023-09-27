@@ -30,10 +30,7 @@ class LoginViewModel(
 
     fun login(email: String, password: String) {
         viewModelScope.launch {
-            val loginData = LoginData(
-                email, password
-            )
-            loginUser.login(loginData).collect{ result ->
+            loginUser.login(email, password).collect{ result ->
                 when (result) {
                     is LoginUserResult.Success -> {
                         _loginUIState.value = LoginUIState.Success

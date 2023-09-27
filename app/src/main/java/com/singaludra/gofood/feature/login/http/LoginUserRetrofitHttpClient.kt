@@ -1,6 +1,8 @@
 package com.singaludra.gofood.feature.login.http
 
+import android.util.Log
 import com.singaludra.gofood.feature.login.domain.LoginData
+import com.singaludra.gofood.feature.login.http.model.LoginDataRequest
 import com.singaludra.gofood.feature.register.http.ConnectivityException
 import com.singaludra.gofood.feature.register.http.InvalidDataException
 import kotlinx.coroutines.Dispatchers
@@ -13,10 +15,11 @@ import java.io.IOException
 class LoginUserRetrofitHttpClient constructor(
     private val loginUserService: LoginUserService
 ): LoginUserHttpClient {
-    override fun login(userData: LoginData): Flow<HttpClientLoginResult> = flow {
+    override fun login(userData: LoginDataRequest): Flow<HttpClientLoginResult> = flow {
         try {
             emit(HttpClientLoginResult.Success(loginUserService.login(userData)))
         } catch (throwable: Throwable) {
+            Log.d("throwable", throwable.toString())
             when(throwable) {
                 is IOException -> {
                     emit(HttpClientLoginResult.Failure(ConnectivityException()))

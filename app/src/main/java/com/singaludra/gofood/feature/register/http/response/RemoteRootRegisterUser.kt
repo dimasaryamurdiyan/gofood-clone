@@ -3,12 +3,15 @@ package com.singaludra.gofood.feature.register.http.response
 import com.singaludra.gofood.feature.register.domain.RegisterUserItem
 import com.singaludra.gofood.feature.register.domain.User
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class RemoteRootRegisterUser(
     @Json(name = "data")
     val data: RemoteRegisterUserItem
 )
 
+@JsonClass(generateAdapter = true)
 data class RemoteRegisterUserItem(
     @Json(name = "access_token")
     val accesToken: String,
@@ -18,6 +21,7 @@ data class RemoteRegisterUserItem(
     val user: RemoteUser
 )
 
+@JsonClass(generateAdapter = true)
 data class RemoteUser(
     @Json(name = "id")
     val id: Int,
