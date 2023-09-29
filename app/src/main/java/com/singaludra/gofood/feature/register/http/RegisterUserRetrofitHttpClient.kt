@@ -1,6 +1,6 @@
 package com.singaludra.gofood.feature.register.http
 
-import com.singaludra.gofood.feature.register.http.request.RegistrationData
+import com.singaludra.gofood.feature.register.http.request.UserDataRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,7 +11,7 @@ import java.io.IOException
 class RegisterUserRetrofitHttpClient constructor(
     private val registerUserService: RegisterUserService
 ): RegisterUserHttpClient{
-    override fun register(userData: RegistrationData): Flow<HttpClientRegisterResult> =  flow {
+    override fun register(userData: UserDataRequest): Flow<HttpClientRegisterResult> =  flow {
         try {
             emit(HttpClientRegisterResult.Success(registerUserService.registerUser(userData)))
         } catch (throwable: Throwable) {

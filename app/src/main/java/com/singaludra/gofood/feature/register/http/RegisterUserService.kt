@@ -1,11 +1,11 @@
 package com.singaludra.gofood.feature.register.http
 
-import com.singaludra.gofood.feature.register.http.request.RegistrationData
-import com.singaludra.gofood.feature.register.http.response.RemoteRootRegisterUser
+import com.singaludra.gofood.feature.register.http.request.UserDataRequest
+import com.singaludra.gofood.shared.http.response.RemoteRootRegisterUser
 import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface RegisterUserService {
     @POST("register")
-    fun registerUser(@Body registrationData: RegistrationData): RemoteRootRegisterUser
+    suspend fun registerUser(@Body registrationData: UserDataRequest): RemoteRootRegisterUser
 }
