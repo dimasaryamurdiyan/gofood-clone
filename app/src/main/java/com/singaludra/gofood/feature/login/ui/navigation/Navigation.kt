@@ -12,10 +12,6 @@ import com.singaludra.gofood.feature.login.ui.LoginScreen
 import com.singaludra.gofood.feature.register.ui.AddressScreen
 import com.singaludra.gofood.feature.register.ui.RegisterScreen
 
-const val REGISTER_GRAPH_ROUTE = "register-graph"
-const val REGISTER = "register"
-const val REGISTER_ADDRESS = "register/address"
-
 const val LOGIN_GRAPH_ROUTE = "login-graph"
 const val LOGIN = "login"
 
