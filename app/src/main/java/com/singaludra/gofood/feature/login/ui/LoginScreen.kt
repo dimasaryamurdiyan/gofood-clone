@@ -19,11 +19,11 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.singaludra.gofood.feature.login.presentation.LoginUIState
-import com.singaludra.gofood.shared.components.FilledButtonSection
-import com.singaludra.gofood.shared.components.InputPasswordTextFieldSection
-import com.singaludra.gofood.shared.components.OutlineButtonSection
-import com.singaludra.gofood.shared.components.TextFieldSection
-import com.singaludra.gofood.shared.components.TopBarSection
+import com.singaludra.gofood.shared.ui.components.FilledButtonSection
+import com.singaludra.gofood.shared.ui.components.InputPasswordTextFieldSection
+import com.singaludra.gofood.shared.ui.components.OutlineButtonSection
+import com.singaludra.gofood.shared.ui.components.TextFieldSection
+import com.singaludra.gofood.shared.ui.components.TopBarSection
 import com.singaludra.gofood.ui.theme.GofoodTheme
 
 @OptIn(ExperimentalMaterial3Api::class)

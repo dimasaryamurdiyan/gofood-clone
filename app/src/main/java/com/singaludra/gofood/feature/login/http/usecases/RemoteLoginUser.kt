@@ -8,7 +8,7 @@ import com.singaludra.gofood.feature.login.http.LoginUserHttpClient
 import com.singaludra.gofood.feature.login.http.model.LoginDataRequest
 import com.singaludra.gofood.feature.register.http.ConnectivityException
 import com.singaludra.gofood.feature.register.http.InvalidDataException
-import com.singaludra.gofood.feature.register.http.response.mapToDomain
+import com.singaludra.gofood.shared.http.response.mapToDomain
 import com.singaludra.gofood.feature.register.http.usecases.Connectivity
 import com.singaludra.gofood.feature.register.http.usecases.InvalidData
 import kotlinx.coroutines.flow.Flow

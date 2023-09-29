@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.register.domain
+package com.singaludra.gofood.shared.domain
 
 
 data class RegisterUserItem(
