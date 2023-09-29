@@ -1,8 +1,7 @@
 package com.singaludra.gofood.feature.login.http
 
 import android.util.Log
-import com.singaludra.gofood.feature.login.domain.LoginData
-import com.singaludra.gofood.feature.login.http.model.LoginDataRequest
+import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
 import com.singaludra.gofood.feature.register.http.ConnectivityException
 import com.singaludra.gofood.feature.register.http.InvalidDataException
 import kotlinx.coroutines.Dispatchers

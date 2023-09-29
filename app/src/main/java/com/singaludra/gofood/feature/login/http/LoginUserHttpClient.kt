@@ -1,8 +1,6 @@
 package com.singaludra.gofood.feature.login.http
 
-import com.singaludra.gofood.feature.login.domain.LoginData
-import com.singaludra.gofood.feature.login.http.model.LoginDataRequest
-import com.singaludra.gofood.feature.register.http.HttpClientRegisterResult
+import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
 import com.singaludra.gofood.shared.http.response.RemoteRootRegisterUser
 import kotlinx.coroutines.flow.Flow
 

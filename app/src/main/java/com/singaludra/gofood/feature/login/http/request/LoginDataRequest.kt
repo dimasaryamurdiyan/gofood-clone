@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.login.http.model
+package com.singaludra.gofood.feature.login.http.request
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
