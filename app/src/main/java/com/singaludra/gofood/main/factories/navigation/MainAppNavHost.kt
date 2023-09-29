@@ -6,8 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.singaludra.gofood.feature.login.ui.navigation.LOGIN_GRAPH_ROUTE
-import com.singaludra.gofood.feature.login.ui.navigation.REGISTER_GRAPH_ROUTE
 import com.singaludra.gofood.feature.login.ui.navigation.loginGraph
+import com.singaludra.gofood.feature.register.ui.navigation.REGISTER_ADDRESS
+import com.singaludra.gofood.feature.register.ui.navigation.REGISTER_GRAPH_ROUTE
 import com.singaludra.gofood.feature.register.ui.navigation.registerGraph
 
 @Composable
@@ -26,9 +27,10 @@ fun MainAppNavHost(
         )
         registerGraph(
             onArrowClick = { navHostController.popBackStack() },
-            onButtonClick = { destination ->
-                navHostController.navigate(destination)
+            onButtonClick = {
+                navHostController.navigate(REGISTER_ADDRESS)
             },
+            navHostController = navHostController
         )
     }
 }
