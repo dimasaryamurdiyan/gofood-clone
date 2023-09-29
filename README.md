@@ -4,8 +4,8 @@ This is a learning project for Senior Android Developer - TDD Bootcamp from Andr
 
 ## Features
 Explanation for each features you can see at this:
-* `Register Feature` [specs] (./register_feature_specs.md)
-* `Register Feature` [specs] (./login_feature_specs.md)
+* `Register Feature` [specs](./register_feature_specs.md)
+* `Register Feature` [specs](./login_feature_specs.md)
 
 ## Guide to Modularization
 TODO
