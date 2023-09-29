@@ -1,7 +1,7 @@
 package com.singaludra.gofood.shared.domain
 
 
-data class RegisterUserItem(
+data class UserRoot(
     val accesToken: String,
     val tokenType: String,
     val user: User
