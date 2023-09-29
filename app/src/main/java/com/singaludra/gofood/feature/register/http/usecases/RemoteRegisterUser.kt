@@ -4,12 +4,14 @@ import android.util.Log
 import com.singaludra.gofood.feature.register.domain.RegisterUser
 import com.singaludra.gofood.feature.register.domain.RegisterUserResult
 import com.singaludra.gofood.feature.register.domain.request.UserData
-import com.singaludra.gofood.feature.register.http.ConnectivityException
 import com.singaludra.gofood.feature.register.http.HttpClientRegisterResult
-import com.singaludra.gofood.feature.register.http.InvalidDataException
 import com.singaludra.gofood.feature.register.http.RegisterUserHttpClient
 import com.singaludra.gofood.feature.register.http.request.UserDataRequest
 import com.singaludra.gofood.shared.http.response.mapToDomain
+import com.singaludra.gofood.shared.utils.Connectivity
+import com.singaludra.gofood.shared.utils.ConnectivityException
+import com.singaludra.gofood.shared.utils.InvalidData
+import com.singaludra.gofood.shared.utils.InvalidDataException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -42,6 +44,3 @@ class RemoteRegisterUser constructor(
         }
     }
 }
-
-class InvalidData : Throwable()
-class Connectivity : Throwable()

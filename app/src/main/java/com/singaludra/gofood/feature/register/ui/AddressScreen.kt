@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.singaludra.gofood.feature.register.presentation.RegisterUIState
 import com.singaludra.gofood.feature.register.presentation.RegistrationFormState
@@ -24,6 +26,7 @@ import com.singaludra.gofood.feature.register.ui.components.DropdownCitySection
 import com.singaludra.gofood.shared.ui.components.FilledButtonSection
 import com.singaludra.gofood.shared.ui.components.TextFieldSection
 import com.singaludra.gofood.shared.ui.components.TopBarSection
+import com.singaludra.gofood.ui.theme.GofoodTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -133,5 +136,13 @@ fun AddressScreen(
                 onClick = {onRegisterClick.invoke(registerDataState.value)}
             )
         }
+    }
+}
+
+@Preview(device = Devices.PIXEL_4_XL ,showSystemUi = true)
+@Composable
+fun AddressScreenPreview(){
+    GofoodTheme {
+        AddressScreen(registerUIState = RegisterUIState(), onArrowClick = { }, onRegisterClick = {})
     }
 }

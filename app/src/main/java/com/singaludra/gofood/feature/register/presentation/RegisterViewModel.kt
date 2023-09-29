@@ -2,16 +2,12 @@ package com.singaludra.gofood.feature.register.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import com.singaludra.gofood.feature.register.domain.RegisterUser
 import com.singaludra.gofood.feature.register.domain.RegisterUserResult
 import com.singaludra.gofood.feature.register.domain.request.UserData
-import com.singaludra.gofood.feature.register.http.usecases.Connectivity
-import com.singaludra.gofood.feature.register.http.usecases.InvalidData
-import com.singaludra.gofood.main.factories.register.RemoteRegisterUserFactory
+import com.singaludra.gofood.shared.utils.Connectivity
+import com.singaludra.gofood.shared.utils.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -78,15 +74,4 @@ class RegisterViewModel(
             }
         }
     }
-    companion object {
-        val FACTORY : ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                RegisterViewModel(
-                    RemoteRegisterUserFactory.createRemoteRegisterUser()
-                )
-            }
-        }
-    }
-
-
 }

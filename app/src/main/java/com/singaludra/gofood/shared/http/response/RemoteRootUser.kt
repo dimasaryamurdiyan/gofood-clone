@@ -1,18 +1,18 @@
 package com.singaludra.gofood.shared.http.response
 
-import com.singaludra.gofood.shared.domain.RegisterUserItem
+import com.singaludra.gofood.shared.domain.UserRoot
 import com.singaludra.gofood.shared.domain.User
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class RemoteRootRegisterUser(
+data class RemoteRootUser(
     @Json(name = "data")
-    val data: RemoteRegisterUserItem
+    val data: RemoteUserItem
 )
 
 @JsonClass(generateAdapter = true)
-data class RemoteRegisterUserItem(
+data class RemoteUserItem(
     @Json(name = "access_token")
     val accesToken: String,
     @Json(name = "token_type")
@@ -40,8 +40,8 @@ data class RemoteUser(
     @Json(name = "profile_photo_url")
     val profilePhotoUrl: String
 )
-fun RemoteRegisterUserItem.mapToDomain(): RegisterUserItem {
-    return RegisterUserItem(
+fun RemoteUserItem.mapToDomain(): UserRoot {
+    return UserRoot(
         accesToken = this.accesToken,
         tokenType = this.tokenType,
         user = User(
