@@ -1,7 +1,7 @@
 package com.singaludra.gofood.feature.register.http
 
-import com.singaludra.gofood.feature.register.http.request.RegistrationData
-import com.singaludra.gofood.feature.register.http.response.RemoteRootRegisterUser
+import com.singaludra.gofood.feature.register.http.request.UserDataRequest
+import com.singaludra.gofood.shared.http.response.RemoteRootRegisterUser
 import kotlinx.coroutines.flow.Flow
 
 
@@ -14,5 +14,5 @@ class InvalidDataException : Throwable()
 class ConnectivityException : Throwable()
 
 interface RegisterUserHttpClient {
-    fun register(userData : RegistrationData): Flow<HttpClientRegisterResult>
+    fun register(userData : UserDataRequest): Flow<HttpClientRegisterResult>
 }
