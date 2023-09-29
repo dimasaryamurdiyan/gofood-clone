@@ -1,4 +1,4 @@
-package com.singaludra.gofood.shared.components
+package com.singaludra.gofood.shared.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
