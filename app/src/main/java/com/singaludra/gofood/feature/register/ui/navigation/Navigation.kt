@@ -1,5 +1,6 @@
 package com.singaludra.gofood.feature.register.ui.navigation
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -13,12 +14,14 @@ import androidx.navigation.compose.navigation
 import com.singaludra.gofood.feature.register.presentation.RegisterViewModel
 import com.singaludra.gofood.feature.register.ui.AddressScreen
 import com.singaludra.gofood.feature.register.ui.RegisterScreen
+import com.singaludra.gofood.main.factories.register.RegisterViewModelFactory
 
 const val REGISTER_GRAPH_ROUTE = "register-graph"
 const val REGISTER = "register"
 const val REGISTER_ADDRESS = "register/address"
 
 fun NavGraphBuilder.registerGraph(
+    context: Context,
     navHostController: NavHostController,
     onArrowClick: () -> Unit,
     onButtonClick: () -> Unit,
@@ -29,7 +32,7 @@ fun NavGraphBuilder.registerGraph(
     ) {
         composable(REGISTER) {
             RegisterScreenRoot(
-                viewModel = viewModel(factory = RegisterViewModel.FACTORY),
+                viewModel = viewModel(factory = RegisterViewModelFactory.provideRegisterViewModel(context)),
                 onArrowClick = onArrowClick,
                 onButtonClick = onButtonClick
             )
