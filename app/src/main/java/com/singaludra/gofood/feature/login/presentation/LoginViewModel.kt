@@ -5,12 +5,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.singaludra.gofood.feature.login.domain.LoginData
 import com.singaludra.gofood.feature.login.domain.LoginUser
 import com.singaludra.gofood.feature.login.domain.LoginUserResult
-import com.singaludra.gofood.feature.register.http.usecases.Connectivity
-import com.singaludra.gofood.feature.register.http.usecases.InvalidData
 import com.singaludra.gofood.main.factories.login.RemoteLoginUserFactory
+import com.singaludra.gofood.shared.utils.Connectivity
+import com.singaludra.gofood.shared.utils.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

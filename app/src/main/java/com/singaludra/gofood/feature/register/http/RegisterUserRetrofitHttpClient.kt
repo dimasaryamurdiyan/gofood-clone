@@ -1,6 +1,8 @@
 package com.singaludra.gofood.feature.register.http
 
 import com.singaludra.gofood.feature.register.http.request.UserDataRequest
+import com.singaludra.gofood.shared.utils.ConnectivityException
+import com.singaludra.gofood.shared.utils.InvalidDataException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
