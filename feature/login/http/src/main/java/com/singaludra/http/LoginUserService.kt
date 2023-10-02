@@ -1,6 +1,6 @@
-package com.singaludra.gofood.feature.login.http
+package com.singaludra.http
 
-import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
+import com.singaludra.http.request.LoginDataRequest
 import com.singaludra.shared.response.RemoteRootUser
 import retrofit2.http.Body
 import retrofit2.http.POST

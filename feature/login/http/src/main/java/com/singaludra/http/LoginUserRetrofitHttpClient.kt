@@ -1,7 +1,7 @@
-package com.singaludra.gofood.feature.login.http
+package com.singaludra.http
 
 import android.util.Log
-import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
+import com.singaludra.http.request.LoginDataRequest
 import com.singaludra.shared.utils.ConnectivityException
 import com.singaludra.shared.utils.InvalidDataException
 import kotlinx.coroutines.Dispatchers
