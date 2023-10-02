@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.singaludra.gofood.main.factories.navigation.MainAppNavHost
-import com.singaludra.gofood.ui.theme.GofoodTheme
+import com.singaludra.shared.ui.theme.GofoodTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

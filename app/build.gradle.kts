@@ -52,7 +52,13 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":shared"))
+    implementation(project(":feature:login:domain"))
+    implementation(project(":feature:login:http"))
+    implementation(project(":feature:login:presentation"))
+    implementation(project(":feature:register:domain"))
+    implementation(project(":feature:register:http"))
+    implementation(project(":feature:register:presentation"))
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)

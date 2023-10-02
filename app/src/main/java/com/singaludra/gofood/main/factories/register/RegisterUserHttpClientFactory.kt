@@ -1,12 +1,12 @@
 package com.singaludra.gofood.main.factories.register
 
-import com.singaludra.gofood.feature.register.http.RegisterUserHttpClient
-import com.singaludra.gofood.feature.register.http.RegisterUserRetrofitHttpClient
+import com.singaludra.http.RegisterUserHttpClient
+import com.singaludra.http.RegisterUserRetrofitHttpClient
 
 class RegisterUserHttpClientFactory {
     companion object {
-        fun createRegisterUserHttpClientFactory(): RegisterUserHttpClient {
-            return RegisterUserRetrofitHttpClient (
+        fun createRegisterUserHttpClientFactory(): com.singaludra.http.RegisterUserHttpClient {
+            return com.singaludra.http.RegisterUserRetrofitHttpClient(
                 RegisterUserServiceFactory.createRegisterUserService()
             )
         }

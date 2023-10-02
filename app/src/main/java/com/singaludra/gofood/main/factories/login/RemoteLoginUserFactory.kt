@@ -1,12 +1,12 @@
 package com.singaludra.gofood.main.factories.login
 
-import com.singaludra.gofood.feature.login.domain.LoginUser
-import com.singaludra.gofood.feature.login.http.usecases.RemoteLoginUser
+import com.singaludra.login.domain.LoginUser
+import com.singaludra.http.usecases.RemoteLoginUser
 
 class RemoteLoginUserFactory {
     companion object {
-        fun createRemoteLoginUser(): LoginUser {
-            return RemoteLoginUser (
+        fun createRemoteLoginUser(): com.singaludra.login.domain.LoginUser {
+            return com.singaludra.http.usecases.RemoteLoginUser(
                 LoginUserHttpClientFactory.createLoginUserHttpClientFactory()
             )
         }
