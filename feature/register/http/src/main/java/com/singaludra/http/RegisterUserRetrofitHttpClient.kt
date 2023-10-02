@@ -1,6 +1,6 @@
-package com.singaludra.gofood.feature.register.http
+package com.singaludra.http
 
-import com.singaludra.gofood.feature.register.http.request.UserDataRequest
+import com.singaludra.http.request.UserDataRequest
 import com.singaludra.shared.utils.ConnectivityException
 import com.singaludra.shared.utils.InvalidDataException
 import kotlinx.coroutines.Dispatchers
@@ -12,22 +12,22 @@ import java.io.IOException
 
 class RegisterUserRetrofitHttpClient constructor(
     private val registerUserService: RegisterUserService
-): RegisterUserHttpClient{
+): RegisterUserHttpClient {
     override fun register(userData: UserDataRequest): Flow<HttpClientRegisterResult> =  flow {
         try {
             emit(HttpClientRegisterResult.Success(registerUserService.registerUser(userData)))
         } catch (throwable: Throwable) {
             when(throwable) {
                 is IOException -> {
-                    emit(HttpClientRegisterResult.Failure(com.singaludra.shared.utils.ConnectivityException()))
+                    emit(HttpClientRegisterResult.Failure(ConnectivityException()))
                 }
                 is HttpException -> {
                     if (throwable.code() == 422) {
-                        emit(HttpClientRegisterResult.Failure(com.singaludra.shared.utils.InvalidDataException()))
+                        emit(HttpClientRegisterResult.Failure(InvalidDataException()))
                     }
                 }
                 else -> {
-                    emit(HttpClientRegisterResult.Failure(com.singaludra.shared.utils.InvalidDataException()))
+                    emit(HttpClientRegisterResult.Failure(InvalidDataException()))
                 }
             }
         }

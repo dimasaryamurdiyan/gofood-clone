@@ -1,6 +1,6 @@
-package com.singaludra.gofood.feature.register.http.request
+package com.singaludra.http.request
 
-import com.singaludra.gofood.feature.register.domain.request.UserData
+import com.singaludra.register.domain.request.UserData
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
