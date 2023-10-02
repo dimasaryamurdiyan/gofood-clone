@@ -23,10 +23,10 @@ import androidx.compose.ui.unit.dp
 import com.singaludra.gofood.feature.register.presentation.RegisterUIState
 import com.singaludra.gofood.feature.register.presentation.RegistrationFormState
 import com.singaludra.gofood.feature.register.ui.components.DropdownCitySection
-import com.singaludra.gofood.shared.ui.components.FilledButtonSection
-import com.singaludra.gofood.shared.ui.components.TextFieldSection
-import com.singaludra.gofood.shared.ui.components.TopBarSection
-import com.singaludra.gofood.ui.theme.GofoodTheme
+import com.singaludra.shared.ui.components.FilledButtonSection
+import com.singaludra.shared.ui.components.TextFieldSection
+import com.singaludra.shared.ui.components.TopBarSection
+import com.singaludra.shared.ui.theme.GofoodTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +47,7 @@ fun AddressScreen(
             snackbarHostState.showSnackbar("Register sukses")
         }
         if(registerUIState.isSuccess == false){
-            snackbarHostState.showSnackbar(registerUIState.errorMessage ?: "unknown error")
+            snackbarHostState.showSnackbar(registerUIState.errorMessage)
         }
     }
 
@@ -133,7 +133,7 @@ fun AddressScreen(
             FilledButtonSection(
                 modifier = Modifier.padding(16.dp),
                 buttonText = "Submit",
-                onClick = {onRegisterClick.invoke(registerDataState.value)}
+                onClick = { onRegisterClick.invoke(registerDataState.value) }
             )
         }
     }

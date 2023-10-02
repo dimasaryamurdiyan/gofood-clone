@@ -1,7 +1,7 @@
 package com.singaludra.gofood.feature.user.domain
 
-import com.singaludra.gofood.shared.domain.UserRoot
+import com.singaludra.shared.domain.UserRoot
 
 interface SaveUserInfo {
-    suspend fun save(userRoot: UserRoot)
+    suspend fun save(userRoot: com.singaludra.shared.domain.UserRoot)
 }

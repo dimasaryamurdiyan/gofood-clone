@@ -1,4 +1,4 @@
-package com.singaludra.gofood.shared.utils
+package com.singaludra.shared.utils
 
 class InvalidDataException : Throwable()
 class ConnectivityException : Throwable()

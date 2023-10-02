@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.singaludra.gofood.feature.register.domain.RegisterUser
 import com.singaludra.gofood.feature.register.domain.RegisterUserResult
 import com.singaludra.gofood.feature.register.domain.request.UserData
-import com.singaludra.gofood.shared.utils.Connectivity
-import com.singaludra.gofood.shared.utils.InvalidData
+import com.singaludra.shared.utils.Connectivity
+import com.singaludra.shared.utils.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -59,8 +59,8 @@ class RegisterViewModel(
                     }
                     is RegisterUserResult.Failure -> {
                         val message = when(result.throwable) {
-                            is Connectivity -> "Connectivity"
-                            is InvalidData -> "Invalid Data"
+                            is com.singaludra.shared.utils.Connectivity -> "Connectivity"
+                            is com.singaludra.shared.utils.InvalidData -> "Invalid Data"
                             else -> "Something Went Wrong"
                         }
 

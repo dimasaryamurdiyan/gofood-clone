@@ -7,11 +7,11 @@ import com.singaludra.gofood.feature.register.domain.request.UserData
 import com.singaludra.gofood.feature.register.http.HttpClientRegisterResult
 import com.singaludra.gofood.feature.register.http.RegisterUserHttpClient
 import com.singaludra.gofood.feature.register.http.request.UserDataRequest
-import com.singaludra.gofood.shared.http.response.mapToDomain
-import com.singaludra.gofood.shared.utils.Connectivity
-import com.singaludra.gofood.shared.utils.ConnectivityException
-import com.singaludra.gofood.shared.utils.InvalidData
-import com.singaludra.gofood.shared.utils.InvalidDataException
+import com.singaludra.shared.response.mapToDomain
+import com.singaludra.shared.utils.Connectivity
+import com.singaludra.shared.utils.ConnectivityException
+import com.singaludra.shared.utils.InvalidData
+import com.singaludra.shared.utils.InvalidDataException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -30,13 +30,13 @@ class RemoteRegisterUser constructor(
                 is HttpClientRegisterResult.Failure -> {
                     Log.d("register", "Failure")
                     when (result.throwable) {
-                        is ConnectivityException -> {
-                            emit(RegisterUserResult.Failure(Connectivity()))
+                        is com.singaludra.shared.utils.ConnectivityException -> {
+                            emit(RegisterUserResult.Failure(com.singaludra.shared.utils.Connectivity()))
                         }
 
-                        is InvalidDataException -> {
+                        is com.singaludra.shared.utils.InvalidDataException -> {
                             Log.d("register", "InvalidData")
-                            emit(RegisterUserResult.Failure(InvalidData()))
+                            emit(RegisterUserResult.Failure(com.singaludra.shared.utils.InvalidData()))
                         }
                     }
                 }

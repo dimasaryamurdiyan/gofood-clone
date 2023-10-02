@@ -1,4 +1,4 @@
-package com.singaludra.gofood.shared.domain
+package com.singaludra.shared.domain
 
 
 data class UserRoot(

@@ -1,7 +1,7 @@
-package com.singaludra.gofood.shared.http.response
+package com.singaludra.shared.response
 
-import com.singaludra.gofood.shared.domain.UserRoot
-import com.singaludra.gofood.shared.domain.User
+import com.singaludra.shared.domain.UserRoot
+import com.singaludra.shared.domain.User
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

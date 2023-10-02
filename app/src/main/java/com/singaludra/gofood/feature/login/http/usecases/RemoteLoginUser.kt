@@ -5,11 +5,11 @@ import com.singaludra.gofood.feature.login.domain.LoginUserResult
 import com.singaludra.gofood.feature.login.http.HttpClientLoginResult
 import com.singaludra.gofood.feature.login.http.LoginUserHttpClient
 import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
-import com.singaludra.gofood.shared.http.response.mapToDomain
-import com.singaludra.gofood.shared.utils.Connectivity
-import com.singaludra.gofood.shared.utils.ConnectivityException
-import com.singaludra.gofood.shared.utils.InvalidData
-import com.singaludra.gofood.shared.utils.InvalidDataException
+import com.singaludra.shared.response.mapToDomain
+import com.singaludra.shared.utils.Connectivity
+import com.singaludra.shared.utils.ConnectivityException
+import com.singaludra.shared.utils.InvalidData
+import com.singaludra.shared.utils.InvalidDataException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

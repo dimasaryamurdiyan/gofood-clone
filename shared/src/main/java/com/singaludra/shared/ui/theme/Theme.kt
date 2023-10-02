@@ -1,4 +1,4 @@
-package com.singaludra.gofood.ui.theme
+package com.singaludra.shared.ui.theme
 
 import android.app.Activity
 import android.os.Build

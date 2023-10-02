@@ -1,7 +1,7 @@
 package com.singaludra.gofood.feature.login.http
 
 import com.singaludra.gofood.feature.login.http.request.LoginDataRequest
-import com.singaludra.gofood.shared.http.response.RemoteRootUser
+import com.singaludra.shared.response.RemoteRootUser
 import kotlinx.coroutines.flow.Flow
 
 sealed class HttpClientLoginResult {

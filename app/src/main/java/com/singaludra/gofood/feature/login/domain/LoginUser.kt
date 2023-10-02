@@ -1,6 +1,6 @@
 package com.singaludra.gofood.feature.login.domain
 
-import com.singaludra.gofood.shared.domain.UserRoot
+import com.singaludra.shared.domain.UserRoot
 import kotlinx.coroutines.flow.Flow
 
 sealed class LoginUserResult {

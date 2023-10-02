@@ -21,11 +21,11 @@ import androidx.compose.ui.unit.dp
 import com.singaludra.gofood.feature.register.presentation.RegisterUIState
 import com.singaludra.gofood.feature.register.presentation.RegistrationFormState
 import com.singaludra.gofood.feature.register.ui.components.AddPhotoSection
-import com.singaludra.gofood.shared.ui.components.FilledButtonSection
-import com.singaludra.gofood.shared.ui.components.InputPasswordTextFieldSection
-import com.singaludra.gofood.shared.ui.components.TextFieldSection
-import com.singaludra.gofood.shared.ui.components.TopBarSection
-import com.singaludra.gofood.ui.theme.GofoodTheme
+import com.singaludra.shared.ui.components.FilledButtonSection
+import com.singaludra.shared.ui.components.InputPasswordTextFieldSection
+import com.singaludra.shared.ui.components.TextFieldSection
+import com.singaludra.shared.ui.components.TopBarSection
+import com.singaludra.shared.ui.theme.GofoodTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,18 +62,18 @@ fun RegisterScreen(
 
             Column(modifier = Modifier.padding(horizontal = 16.dp)) {
                TextFieldSection(
-                    title = "Nama",
-                    placeholder = "Huruf alfabet, tanpa emoji/simbol",
-                    keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Text,
-                        imeAction = ImeAction.Next
-                    ),
-                    onValueChange = {
-                        registerDataState.value = registerDataState.value.copy(
-                            name = it
-                        )
-                    }
-                )
+                   title = "Nama",
+                   placeholder = "Huruf alfabet, tanpa emoji/simbol",
+                   keyboardOptions = KeyboardOptions.Default.copy(
+                       keyboardType = KeyboardType.Text,
+                       imeAction = ImeAction.Next
+                   ),
+                   onValueChange = {
+                       registerDataState.value = registerDataState.value.copy(
+                           name = it
+                       )
+                   }
+               )
                 Spacer(modifier = Modifier.padding(vertical = 8.dp))
                 TextFieldSection(
                     title = "Email",
