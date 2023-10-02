@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.login.domain
+package com.singaludra.login.domain
 
 import com.singaludra.shared.domain.UserRoot
 import kotlinx.coroutines.flow.Flow

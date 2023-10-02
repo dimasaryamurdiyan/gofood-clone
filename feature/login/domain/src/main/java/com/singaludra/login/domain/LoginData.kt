@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.login.domain
+package com.singaludra.login.domain
 
 data class LoginData(
     val email: String,
