@@ -1,11 +1,11 @@
-package com.singaludra.gofood.feature.register.presentation
+package com.singaludra.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.singaludra.gofood.feature.register.domain.RegisterUser
-import com.singaludra.gofood.feature.register.domain.RegisterUserResult
-import com.singaludra.gofood.feature.register.domain.request.UserData
+import com.singaludra.register.domain.RegisterUser
+import com.singaludra.register.domain.RegisterUserResult
+import com.singaludra.register.domain.request.UserData
 import com.singaludra.shared.utils.Connectivity
 import com.singaludra.shared.utils.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,9 +22,10 @@ data class RegistrationFormState(
     val houseNumber: String = "",
     val phoneNumber: String = ""
 ) {
-    fun mapToDomain(): UserData = UserData (
-        name, email, password, passwordConfirmation, address, city, houseNumber, phoneNumber
-    )
+    fun mapToDomain(): UserData =
+        UserData(
+            name, email, password, passwordConfirmation, address, city, houseNumber, phoneNumber
+        )
 }
 data class RegisterUIState(
     val isLoading: Boolean = false,
@@ -59,8 +60,8 @@ class RegisterViewModel(
                     }
                     is RegisterUserResult.Failure -> {
                         val message = when(result.throwable) {
-                            is com.singaludra.shared.utils.Connectivity -> "Connectivity"
-                            is com.singaludra.shared.utils.InvalidData -> "Invalid Data"
+                            is Connectivity -> "Connectivity"
+                            is InvalidData -> "Invalid Data"
                             else -> "Something Went Wrong"
                         }
 
