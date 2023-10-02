@@ -1,4 +1,4 @@
-package com.singaludra.gofood.frameworks
+package com.singaludra.shared.frameworks
 
 import android.content.Context
 import android.content.SharedPreferences

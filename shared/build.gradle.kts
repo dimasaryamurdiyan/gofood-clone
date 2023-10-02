@@ -52,7 +52,11 @@ dependencies {
     implementation(libs.material.icons)
 
     implementation(libs.moshi.kotlin)
+    implementation(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
     implementation(libs.converter.moshi)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

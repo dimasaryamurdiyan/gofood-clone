@@ -1,7 +1,7 @@
 package com.singaludra.gofood.main.factories.login
 
 import com.singaludra.gofood.feature.login.http.LoginUserService
-import com.singaludra.gofood.frameworks.HttpFactory
+import com.singaludra.shared.frameworks.HttpFactory
 
 class LoginUserServiceFactory {
     companion object {

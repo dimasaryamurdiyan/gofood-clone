@@ -1,7 +1,7 @@
 package com.singaludra.gofood.main.factories.register
 
 import com.singaludra.gofood.feature.register.http.RegisterUserService
-import com.singaludra.gofood.frameworks.HttpFactory
+import com.singaludra.shared.frameworks.HttpFactory
 
 class RegisterUserServiceFactory {
     companion object {
