@@ -17,6 +17,10 @@
             <option value="$PROJECT_DIR$/feature/login/domain" />
             <option value="$PROJECT_DIR$/feature/login/http" />
             <option value="$PROJECT_DIR$/feature/login/presentation" />
+            <option value="$PROJECT_DIR$/feature/register" />
+            <option value="$PROJECT_DIR$/feature/register/domain" />
+            <option value="$PROJECT_DIR$/feature/register/http" />
+            <option value="$PROJECT_DIR$/feature/register/presentation" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>

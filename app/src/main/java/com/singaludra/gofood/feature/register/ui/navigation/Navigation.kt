@@ -11,7 +11,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.singaludra.gofood.feature.register.presentation.RegisterViewModel
+import com.singaludra.presentation.RegisterViewModel
 import com.singaludra.gofood.feature.register.ui.AddressScreen
 import com.singaludra.gofood.feature.register.ui.RegisterScreen
 import com.singaludra.gofood.main.factories.register.RegisterViewModelFactory
@@ -67,7 +67,7 @@ fun rememberParentViewModelStoreOwner(
 
 @Composable
 fun RegisterScreenRoot(
-    viewModel: RegisterViewModel,
+    viewModel: com.singaludra.presentation.RegisterViewModel,
     onArrowClick: () -> Unit,
     onButtonClick: () -> Unit,
 ) {
@@ -85,7 +85,7 @@ fun RegisterScreenRoot(
 
 @Composable
 fun AddressScreenRoot(
-    viewModel: RegisterViewModel,
+    viewModel: com.singaludra.presentation.RegisterViewModel,
     onArrowClick: () -> Unit,
 ) {
     val registerUiState by viewModel.registerUIState.collectAsStateWithLifecycle()

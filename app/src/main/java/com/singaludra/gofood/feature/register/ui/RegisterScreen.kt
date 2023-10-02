@@ -18,8 +18,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.singaludra.gofood.feature.register.presentation.RegisterUIState
-import com.singaludra.gofood.feature.register.presentation.RegistrationFormState
+import com.singaludra.presentation.RegisterUIState
+import com.singaludra.presentation.RegistrationFormState
 import com.singaludra.gofood.feature.register.ui.components.AddPhotoSection
 import com.singaludra.shared.ui.components.FilledButtonSection
 import com.singaludra.shared.ui.components.InputPasswordTextFieldSection
@@ -31,10 +31,10 @@ import com.singaludra.shared.ui.theme.GofoodTheme
 @Composable
 fun RegisterScreen(
     modifier: Modifier = Modifier,
-    registerUIState: RegisterUIState = RegisterUIState(),
+    registerUIState: com.singaludra.presentation.RegisterUIState = com.singaludra.presentation.RegisterUIState(),
     snackbarHostState: SnackbarHostState = SnackbarHostState(),
     onArrowClick: () -> Unit,
-    onButtonClick: (RegistrationFormState) -> Unit,
+    onButtonClick: (com.singaludra.presentation.RegistrationFormState) -> Unit,
 ) {
 
     val registerDataState = remember { mutableStateOf(registerUIState.registrationFormState) }
@@ -119,6 +119,6 @@ fun RegisterScreen(
 @Composable
 fun RegisterScreenPreview(){
     GofoodTheme {
-        RegisterScreen(registerUIState = RegisterUIState(), onArrowClick = { }, onButtonClick = {})
+        RegisterScreen(registerUIState = com.singaludra.presentation.RegisterUIState(), onArrowClick = { }, onButtonClick = {})
     }
 }

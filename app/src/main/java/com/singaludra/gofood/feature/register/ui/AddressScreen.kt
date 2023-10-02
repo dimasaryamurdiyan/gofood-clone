@@ -20,8 +20,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.singaludra.gofood.feature.register.presentation.RegisterUIState
-import com.singaludra.gofood.feature.register.presentation.RegistrationFormState
+import com.singaludra.presentation.RegisterUIState
+import com.singaludra.presentation.RegistrationFormState
 import com.singaludra.gofood.feature.register.ui.components.DropdownCitySection
 import com.singaludra.shared.ui.components.FilledButtonSection
 import com.singaludra.shared.ui.components.TextFieldSection
@@ -32,11 +32,11 @@ import com.singaludra.shared.ui.theme.GofoodTheme
 @Composable
 fun AddressScreen(
     modifier: Modifier = Modifier,
-    registerUIState: RegisterUIState,
+    registerUIState: com.singaludra.presentation.RegisterUIState,
     snackbarHostState: SnackbarHostState = SnackbarHostState(),
     dropDownList: List<String> = listOf("Bali","Jakarta", "Bandung", "Cilacap", "Jogja"),
     onArrowClick: () -> Unit,
-    onRegisterClick: (RegistrationFormState) -> Unit
+    onRegisterClick: (com.singaludra.presentation.RegistrationFormState) -> Unit
 ) {
 
     val registerDataState = remember { mutableStateOf(registerUIState.registrationFormState) }
@@ -143,6 +143,6 @@ fun AddressScreen(
 @Composable
 fun AddressScreenPreview(){
     GofoodTheme {
-        AddressScreen(registerUIState = RegisterUIState(), onArrowClick = { }, onRegisterClick = {})
+        AddressScreen(registerUIState = com.singaludra.presentation.RegisterUIState(), onArrowClick = { }, onRegisterClick = {})
     }
 }
