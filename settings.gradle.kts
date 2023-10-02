@@ -16,3 +16,6 @@ dependencyResolutionManagement {
 rootProject.name = "gofood"
 include(":app")
 include(":shared")
+include(":feature:login:domain")
+include(":feature:login:http")
+include(":feature:login:presentation")

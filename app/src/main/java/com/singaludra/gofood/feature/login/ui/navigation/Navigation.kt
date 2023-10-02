@@ -8,10 +8,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.singaludra.gofood.feature.login.presentation.LoginViewModel
+import com.singaludra.login.presentation.LoginViewModel
 import com.singaludra.gofood.feature.login.ui.LoginScreen
-import com.singaludra.gofood.feature.register.ui.AddressScreen
-import com.singaludra.gofood.feature.register.ui.RegisterScreen
 import com.singaludra.gofood.main.factories.login.LoginViewModelFactory
 
 const val LOGIN_GRAPH_ROUTE = "login-graph"

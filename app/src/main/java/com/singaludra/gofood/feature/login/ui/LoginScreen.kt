@@ -18,7 +18,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.singaludra.gofood.feature.login.presentation.LoginUIState
+import com.singaludra.login.presentation.LoginUIState
 import com.singaludra.shared.ui.components.FilledButtonSection
 import com.singaludra.shared.ui.components.InputPasswordTextFieldSection
 import com.singaludra.shared.ui.components.OutlineButtonSection
@@ -30,7 +30,7 @@ import com.singaludra.shared.ui.theme.GofoodTheme
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
-    loginUIState: LoginUIState,
+    loginUIState: com.singaludra.login.presentation.LoginUIState,
     onBtnRegisterClick: () -> Unit,
     snackbarHostState: SnackbarHostState = SnackbarHostState(),
     onBtnLoginClick: (email: String, password: String) -> Unit
@@ -40,10 +40,10 @@ fun LoginScreen(
 
     LaunchedEffect(snackbarHostState) {
         when(loginUIState){
-            is LoginUIState.Success ->{
+            is com.singaludra.login.presentation.LoginUIState.Success ->{
                 snackbarHostState.showSnackbar("Login sukses")
             }
-            is LoginUIState.Error ->{
+            is com.singaludra.login.presentation.LoginUIState.Error ->{
                 snackbarHostState.showSnackbar(loginUIState.errorMessage ?: "unknown error")
             }
             else -> {
@@ -120,7 +120,7 @@ private fun PreviewLoginScreen(){
     GofoodTheme {
         LoginScreen(
             onBtnRegisterClick = {},
-            loginUIState = LoginUIState.Success
+            loginUIState = com.singaludra.login.presentation.LoginUIState.Success
         ) { _ , _ -> }
     }
 
