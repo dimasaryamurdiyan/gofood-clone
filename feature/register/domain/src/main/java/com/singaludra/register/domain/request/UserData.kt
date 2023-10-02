@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.register.domain.request
+package com.singaludra.register.domain.request
 
 data class UserData(
     val name: String,
