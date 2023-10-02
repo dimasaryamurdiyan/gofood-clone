@@ -2,7 +2,7 @@ package com.singaludra.gofood.main.decorators
 
 import com.singaludra.login.domain.LoginUser
 import com.singaludra.login.domain.LoginUserResult
-import com.singaludra.gofood.feature.user.domain.SaveUserInfo
+import com.singaludra.shared.user.domain.SaveUserInfo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

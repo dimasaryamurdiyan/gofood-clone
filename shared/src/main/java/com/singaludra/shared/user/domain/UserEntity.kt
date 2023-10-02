@@ -1,4 +1,4 @@
-package com.singaludra.gofood.feature.user.domain
+package com.singaludra.shared.user.domain
 
 import com.singaludra.shared.domain.UserRoot
 
@@ -8,7 +8,7 @@ data class UserEntity(
     val user: UserEntityItem
 ) {
     companion object {
-        fun mapFromDomain(userRoot: com.singaludra.shared.domain.UserRoot): UserEntity =
+        fun mapFromDomain(userRoot: UserRoot): UserEntity =
             UserEntity(
                 accesToken = userRoot.accesToken,
                 tokenType = userRoot.tokenType,

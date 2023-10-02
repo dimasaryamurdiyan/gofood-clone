@@ -1,8 +1,7 @@
-package com.singaludra.gofood.feature.user.local
+package com.singaludra.shared.user.local
 
-import android.content.Context
 import android.content.SharedPreferences
-import com.singaludra.gofood.feature.user.domain.UserEntity
+import com.singaludra.shared.user.domain.UserEntity
 
 class UserInfoRepository constructor(
     private val sharedPreferences: SharedPreferences

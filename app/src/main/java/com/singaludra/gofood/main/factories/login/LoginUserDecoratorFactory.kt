@@ -1,7 +1,7 @@
 package com.singaludra.gofood.main.factories.login
 
 import com.singaludra.login.domain.LoginUser
-import com.singaludra.gofood.feature.user.domain.SaveUserInfo
+import com.singaludra.shared.user.domain.SaveUserInfo
 import com.singaludra.gofood.main.decorators.LoginUserDecorator
 
 class LoginUserDecoratorFactory {
