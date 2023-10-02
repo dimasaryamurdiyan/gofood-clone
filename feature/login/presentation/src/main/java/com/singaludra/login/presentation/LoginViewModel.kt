@@ -1,13 +1,9 @@
-package com.singaludra.gofood.feature.login.presentation
+package com.singaludra.login.presentation
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
-import com.singaludra.gofood.feature.login.domain.LoginUser
-import com.singaludra.gofood.feature.login.domain.LoginUserResult
-import com.singaludra.gofood.main.factories.login.RemoteLoginUserFactory
+import com.singaludra.login.domain.LoginUser
+import com.singaludra.login.domain.LoginUserResult
 import com.singaludra.shared.utils.Connectivity
 import com.singaludra.shared.utils.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -36,8 +32,8 @@ class LoginViewModel(
                     }
                     is LoginUserResult.Failure -> {
                         val message = when(result.throwable) {
-                            is com.singaludra.shared.utils.Connectivity -> "Connectivity"
-                            is com.singaludra.shared.utils.InvalidData -> "Invalid Data"
+                            is Connectivity -> "Connectivity"
+                            is InvalidData -> "Invalid Data"
                             else -> "Something Went Wrong"
                         }
 
@@ -48,13 +44,4 @@ class LoginViewModel(
         }
     }
 
-    companion object {
-        val FACTORY : ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                LoginViewModel(
-                    RemoteLoginUserFactory.createRemoteLoginUser()
-                )
-            }
-        }
-    }
 }
